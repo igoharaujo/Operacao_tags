@@ -8,4 +8,4 @@ def tag_creator_validator(request: any) -> None:
 
     response = body_validator.validate(request.json)
     if response is False:
-        raise Exception(body_validator.errors)
+        raise HttpUnprocessableEntityError(body_validator.errors)
